@@ -1,4 +1,4 @@
-# payforblod
+# payforblob
 An user interface for PFB for Celestia with plain html code  
 
 # How to run
