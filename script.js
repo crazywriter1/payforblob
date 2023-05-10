@@ -53,14 +53,16 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => response.json())
             .then(data => {
                 console.log('Response:', data);
-                // Handle the response data as needed
+                alert(`Your PFB Has been sent successfully. Your txhash is ${data['txhash']}`)
+
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Handle the error
+                alert(`Your PFB Has not been sent successfully. Please make sure your your port is opened`)
+
             });
         console.log(ipAddress,gasLimit,feeInput,nameSpaceId,data)
-        // ... perform validation for other fields if needed ...
+      
 
 
         // You can also submit the form programmatically using the following line:
