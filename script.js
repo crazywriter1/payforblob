@@ -43,11 +43,10 @@ document.addEventListener('DOMContentLoaded', function () {
             gas_limit: parseInt(gasLimit),
             fee: parseInt(feeInput),
             ip_address: ipAddress,
-
         };
         const requestOptions = {
             method: 'POST',
-            type:'text/plain;charset=utf-8',
+            type: 'text/plain;charset=utf-8',
             body: JSON.stringify(payload)
         };
 
@@ -56,16 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 console.log('Response:', data);
                 alert(`Your PFB Has been sent successfully. Your txhash is ${data['txhash']}`)
-
             })
             .catch(error => {
                 console.error('Error:', error);
                 alert(`Your PFB Has not been sent successfully. Please make sure your your port is opened`)
 
             });
-        console.log(ipAddress,gasLimit,feeInput,nameSpaceId,data)
-      
-
+        console.log(ipAddress, gasLimit, feeInput, nameSpaceId, data)
+        // ... perform validation for other fields if needed ...
 
         // You can also submit the form programmatically using the following line:
         // form.submit();
