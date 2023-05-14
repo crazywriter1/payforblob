@@ -5,4 +5,4 @@ An user interface for PFB for Celestia with plain html code
 Just doble click to include pfb_ui.html and it will run just fine.
 
 # Cors Policy
-Make sure you allow cors to be able to run the code.
+Make sure you allow cors to be able to run the code in local host.
