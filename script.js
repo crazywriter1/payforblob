@@ -36,12 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const url = `http://${ipAddress}:26659/submit_pfb`;
+        const url = `http://${ipAddress}:8080/pfb`;
         const payload = {
             namespace_id: nameSpaceId,
             data: data,
             gas_limit: parseInt(gasLimit),
-            fee: parseInt(feeInput)
+            fee: parseInt(feeInput),
+            ip_address: ipAddress,
+
         };
         const requestOptions = {
             method: 'POST',
