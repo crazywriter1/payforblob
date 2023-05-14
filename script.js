@@ -1,9 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('pfbFrom');
 
+    function toggleSpinner(visible) {
+        const spinner = document.getElementById('loading-spinner');
+        spinner.style.display = visible ? 'block' : 'none';
+    }
+
+
     form.addEventListener('submit', function (event) {
         event.preventDefault();
-
+        toggleSpinner(true)
         const ipAddress = document.getElementById('ipAddress').value;
         const gasLimit = document.getElementById('gasLimit').value;
         const feeInput = document.getElementById('fee').value;
@@ -55,10 +61,14 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 console.log('Response:', data);
                 alert(`Your PFB Has been sent successfully. Your txhash is ${data['txhash']}`)
+                toggleSpinner(false); // Hide the spinner
+
             })
             .catch(error => {
                 console.error('Error:', error);
                 alert(`Your PFB Has not been sent successfully. Please make sure your your port is opened`)
+                toggleSpinner(false); // Hide the spinner
+
 
             });
         console.log(ipAddress, gasLimit, feeInput, nameSpaceId, data)
